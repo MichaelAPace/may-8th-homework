@@ -1,0 +1,112 @@
+Summary of Chapter 1 : Intro to Programming
+https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md
+
+Statements - Words, numbers and operators that perform a specific task is a statement. Characters like (A)(B) are variables which hold a value.
+Numbers are literal values
+= , * are operators that perform the action of the statement.
+
+Programs - Programs use the statements which describe the steps necessary to perform a program’s purpose.
+
+Expressions - Statements consist of one or more expressions, which is any reference to variables and values combined with operators.
+
+Executing a Program - Executed  or running the program. Two ways to execute a program:
+Line by line, top to bottom. This known as ‘interpreting the code’.
+‘Compiling the code’ - where the translation of the code is done automatically then executed later.
+
+Output - Output determines how the answer or data from the program is presented to the user. ie. console.log, alert, etc..
+
+Input - Input determines how the data or variables associated with the program are entered. ie. “prompt”
+
+Operators - Operators determine how to perform actions on variables and values.
+	* = Multiplication
+	(=) 	assignment operator
+	(+)	Math
+	(+=) 	Compound
+	(++)	Increment/Decrement
+	( . )	Object property access. Objects are values that hold other values at specific locations called properties.
+(==)	Equality
+(<)	Comparison - greater than, less than.
+(&&)	Logical
+
+
+
+
+
+
+
+Values & Types -
+
+Types - Types reflect different representations for values based on what the program with do with them. Javascript has built in types called primitive types -
+	Number
+	String
+	Boolean
+	Null
+	Undefied
+
+Converting Between Types
+Coercion - 	Essentially, this is a process of converting a string to a number, thus - coercing.
+		In addition, JS supports implied coercion, where the coercion is done automatically.
+
+Code Comments -	Comments for code!
+	// This is a single-line comment
+	/* This is
+		a multiline
+			comment
+				*/
+Variables - Variables can be described as a symbolic container because the value in the container can vary over time as needed. You declare a variable using the VAR statement.
+Variables can also be used as a centralizing value setting. That is to say a value within a variable that does not change within a program. These are typically capitalized with underscores between words.
+
+Blocks - Basically a series of statements that are related are a block. Must open and close with {}
+
+Conditionals - These can be thought of as an IF statement within a program. “If this is true, do this…” The if statement requires an expression in between parentheses. An ‘else’ clause is used when the condition isnt true.
+Switch statements can be used as shorthand for a series of ‘if, else’ statements.
+
+Loops - Loops repeat a set of actions until a certain condition fails. A loop includes a test condition as well as a block. Each time the loop block executes is called an iteration. If the condition is initially false, a WHILE loop will never run. But a DO loop will run just the first time it’s executed.
+
+Functions - A section of code that can be ‘called’ by name with code that can be run repeatedly. Functions can also take arguments (parameters), ie. values you pass in. Functions are often used that your plan to call multiples times.
+
+Scope - In JS, each function gets its own scope. Scope is a collection of variables and the rules for how those variables are accessed by name. Only code within that that function can access that function’s scoped variables.
+
+Practice -
+Write a program to calculate the total price of your phone purchase. You will keep purchasing phones (hint: loop!) until you run out of money in your bank account. You'll also buy accessories for each phone as long as your purchase amount is below your mental spending threshold.
+
+const SPENDING_THRESHOLD = 400;
+const TAX_RATE=0.08;
+const PHONE_PRICE = 100;
+const ACCESSORY_PRICE=10;
+
+
+var bank_balance=400;
+var amount=0;
+
+function calculateTax(amount){
+return amount * TAX_RATE;
+
+}
+
+function formatAmount(amount {
+return “$” + amount.toFixed (2);
+
+}
+
+while (amount < bank_balance) {
+    amount = amount + PHONE_PRICE;
+
+    if (amount < SPENDING_THRESHOLD) {
+        amount = amount + ACCESSORY_PRICE;
+    }
+}
+
+amount = amount + calculateTax( amount );
+
+console.log(
+    "Your purchase: " + formatAmount( amount )
+);
+
+
+
+if (amount > bank_balance) {
+    console.log(
+        "You can't afford this purchase. :("
+    );
+}
